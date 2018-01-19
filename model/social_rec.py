@@ -56,7 +56,7 @@ class SocialRec(MF):
                         z = self.Z[zid]
                         err = weight - z.dot(p)
                         self.loss += err ** 2
-                        zs += -1.0 * err * p
+                        zs += -1.0 * err * z
                         self.Z[zid] += self.config.lr * (self.config.alpha * err * p - self.config.lambdaZ * z)
 
                         # update latent vectors
